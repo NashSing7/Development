@@ -1,0 +1,7 @@
+
+Docker
+https://nexxtjump.com/2017/12/12/step-by-step-guide-to-run-sql-server-in-a-windows-docker-container/
+https://tomssl.com/2018/01/15/running-microsoft-sql-server-on-a-linux-container-in-docker/
+
+Docker
+https://docs.docker.com/engine/reference/commandline/start/
