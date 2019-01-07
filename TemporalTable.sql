@@ -104,3 +104,25 @@ CREATE TABLE dbo.tb_SystemSetting
 
 
    -- You can also add system versioning to existing tables(gets more complicated if tables have data in them)
+
+   CREATE TABLE dbo.tb_City
+  (
+  	CityId INT NOT NULL PRIMARY KEY CLUSTERED,
+  	CityName varchar(32) NULL,
+  	CityPopulation INT NULL
+  )
+
+  select * from dbo.tb_City
+  -- We need to add the temporal requirements before any data is required
+
+  ALTER TABLE dbo.tb_City
+  ADD SysStartTime datetime2 GENERATED ALWAYS AS ROW START  ,
+  SysEndTime datetime2 GENERATED ALWAYS AS ROW END ,
+         PERIOD FOR SYSTEM_TIME (SysStartTime, SysEndTime)
+  GO
+   
+  ALTER TABLE dbo.tb_City
+      SET (SYSTEM_VERSIONING = ON (HISTORY_TABLE = dbo.tb_City_History))
+  GO
+
+  select * from tb_City_History

@@ -45,3 +45,28 @@ You cannot use TRUNCATE TABLE while SYSTEM_VERSIONING is ON.
 You are not allowed to directly modify the data in a history table.
 
 */
+
+/*
+
+Pc Setup
+
+Running Docker
+-- https://nexxtjump.com/2017/12/12/step-by-step-guide-to-run-sql-server-in-a-windows-docker-container/
+
+Docker Commands
+-- https://docs.docker.com/engine/reference/commandline/start/
+
+Have to use PS or get UI (KiteMatic)
+
+*/
+
+/*
+
+Resources 
+
+Itzik Ben-Gen
+http://tsql.solidq.com/resources/
+
+
+
+*/
