@@ -124,5 +124,21 @@ CREATE TABLE dbo.tb_SystemSetting
   ALTER TABLE dbo.tb_City
       SET (SYSTEM_VERSIONING = ON (HISTORY_TABLE = dbo.tb_City_History))
   GO
-
+  
   select * from tb_City_History
+
+
+  -- General 
+  -- Data types do matter
+  drop table #tb_DataType
+  create table #tb_DataType(VCId varchar(10), IntId INT)
+
+  insert into #tb_DataType values ('10',10), ('100',100), ('11',11), ('8',8), ('4',4)
+
+  select * from #tb_DataType where IntId > 10
+  select * from #tb_DataType where VCId > '10' -- Returns all results
+
+  select * from #tb_DataType where VCId > 10 -- Returns correct results but implicit conversion is used
+
+  select * from #tb_DataType order by IntId asc
+  select * from #tb_DataType order by VCId asc -- All 1's first then 2's , then 3's etc
